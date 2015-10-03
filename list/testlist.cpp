@@ -31,16 +31,27 @@ int main() {
 	}
 	list.printlist();
 
-	cout << "new list after reverse by iteration" << endl;
+	cout << "new list  ";
 	solution A;
-	A.reverseiteration(list.head);
-	
-	list.printlist();
+	List list1(list);
+	list1.printlist();
+	cout << "new list after reverse by iteration  " ;
+	A.reverseiteration(list1.head);
+	list1.printlist();
 
-	cout << "new list after reverse by recursion" << endl;
+	cout << "new list  ";
+	List list2(list);
+	list2.printlist();
+	cout << "new list after reverse by recursion  ";
+	list2.head=A.reverserecursion(list2.head);
+	list2.printlist();
 
-	list.head=A.reverserecursion(list.head);
-	list.printlist();
+	cout << "new list  ";
+	List list3(list);
+	list3.printlist();
+	cout << "new list after reverse by iteration version2  ";
+	A.reverse2(list3.head);
+	list3.printlist();
 
 
 

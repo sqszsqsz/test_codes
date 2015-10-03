@@ -23,9 +23,30 @@ class List{
 public:
 	Node *head;
 	List() {head=NULL;};
+	List(const List &obj);
 	void printlist();
 	void append(int data);
 	
+};
+
+List::List(const List &obj){
+	if (obj.head==NULL){
+		head=NULL;
+	}
+	else {
+		head=new Node;
+		head->val=obj.head->val;
+	}
+	Node* curr=obj.head->next;
+	Node* curr2=head;
+	while(curr){
+		
+		curr2->next=new Node(curr->val);
+		curr2=curr2->next;
+		curr=curr->next;
+	}
+	curr2->next=NULL;
+
 };
 
 void List::printlist(){
